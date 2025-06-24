@@ -1,5 +1,6 @@
 board = [" " for _ in range(9)]
 
+
 def print_board():
     print()
     for i in range(3):
@@ -30,7 +31,11 @@ for _ in range(9):
     print_board()
     move = int(input(f'{turn}의 차례입니다. (0~8)'))
 
-    if board[move] != " ":
+
+    if move > 8:
+        print("범위를 벗어났습니다. 0부터 8까지 선택해주세요.")
+        continue
+    elif board[move] != " ":
         print('이미 선택된 칸입니다.')
         continue
 
